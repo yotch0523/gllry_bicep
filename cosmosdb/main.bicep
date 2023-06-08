@@ -39,17 +39,10 @@ module customRole './customRole.bicep' = {
     principalId: administratorPrincipalId
   }
 }
-// module sqlCustomRole './sqlCustomRole.bicep' = {
-//   name: 'sqlCustomRoleDeploy'
-//   params : {
-//     accountName: accountName
-//     principalId: administratorPrincipalId
-//   }
-// }
-// module servicePrincipalCustomRole './servicePrincipalCustomRole.bicep' = {
-//   name: 'servicePrincipalCustomRoleDeploy'
-//   params: {
-//     accountName: accountName
-//     principalId: principalId
-//   }
-// }
+module servicePrincipalCustomRole './servicePrincipalCustomRole.bicep' = {
+  name: 'servicePrincipalCustomRoleDeploy'
+  params: {
+    accountName: accountName
+    principalId: principalId
+  }
+}

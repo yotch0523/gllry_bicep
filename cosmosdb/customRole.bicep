@@ -27,13 +27,13 @@ resource roleDefinition 'Microsoft.Authorization/roleDefinitions@2022-04-01' = i
     ]
   }
 }
-resource existingRole 'Microsoft.Authorization/roleDefinitions@2022-04-01' existing = {
+resource existingRoleDefinition 'Microsoft.Authorization/roleDefinitions@2022-04-01' existing = {
   name: roleDefinitionId
 }
-resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (isNew) {
   name: roleAssignmentId
   properties: {
     principalId: principalId
-    roleDefinitionId: existingRole.id
+    roleDefinitionId: existingRoleDefinition.id
   }
 }
