@@ -5,8 +5,11 @@
       "accountName": {
         "value": "<cosmosdb-account-name>"
       },
+      "administratorPrincipalId": {
+        "value": "<administrator-principal-id>"
+      },
       "principalId": {
-        "value": "<second-value>"
+        "value": "<service-principal-id>"
       }
     }
   }
