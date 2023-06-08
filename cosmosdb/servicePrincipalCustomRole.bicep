@@ -3,7 +3,7 @@ param accountName string
 @description('Azure Active DirectoryのオブジェクトID(GUID形式)')
 param principalId string
 @description('ロール定義を新規にデプロイするかどうか')
-param isNew bool = true
+param isNew bool = false
 
 var roleDefinitionName = 'Read and Write Role'
 var roleDefinitionId = guid(databaseAccount.id, 'sql-role-definition-for-api')
