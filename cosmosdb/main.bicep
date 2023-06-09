@@ -22,7 +22,7 @@ resource databaseAccount 'Microsoft.DocumentDB/databaseAccounts@2023-04-15' = if
   kind: 'GlobalDocumentDB'
   location: location
   properties: {
-    enableFreeTier: true
+    enableFreeTier: false
     consistencyPolicy: {
       defaultConsistencyLevel: 'Session'
     }
@@ -30,6 +30,11 @@ resource databaseAccount 'Microsoft.DocumentDB/databaseAccounts@2023-04-15' = if
     databaseAccountOfferType: 'Standard'
     enableAutomaticFailover: false
     enableMultipleWriteLocations: false
+    capabilities: [
+      {
+        name: 'EnableServerless'
+      }
+    ]
   }
 }
 
