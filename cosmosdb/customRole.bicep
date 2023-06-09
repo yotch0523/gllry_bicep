@@ -7,7 +7,7 @@ var actions = [
   'Microsoft.DocumentDB/databaseAccounts/sqlRoleAssignments/*'
 ]
 
-var roleDefinitionName = 'Administrator Custom Role'
+var roleDefinitionName = 'CosmosDB Administrator Custom Role'
 var roleDefinitionId = guid(subscription().id, 'role-cosmosdb-administrator-definition')
 var roleAssignmentId = guid(roleDefinitionId, principalId)
 
@@ -15,7 +15,7 @@ resource roleDefinition 'Microsoft.Authorization/roleDefinitions@2022-04-01' = i
   name: roleDefinitionId
   properties: {
     roleName: roleDefinitionName
-    description: 'CosmosDBに関する参照権限'
+    description: 'CosmosDB管理者権限ロール'
     type: 'customRole'
     permissions: [
       {
